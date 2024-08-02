@@ -1,0 +1,158 @@
+
+.content{
+    width: 1000px;
+    border: 8px solid rgb(255, 238, 0);
+    margin: 20px auto;
+    padding: 10px 10px 0;
+    background-color: rgb(252, 250, 233);
+    font-weight: bold;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+
+}
+.qr img{
+    position: relative; 
+    float:right;
+    width: 60px;
+    margin-left: auto;
+    margin-right: 10px;
+    right: 0;
+    
+}
+.clglogo img{
+    width: 100px;
+    margin: 20px auto;
+}
+.clgname{
+    color: darkblue;
+    text-align: center;
+    line-height: 10px;
+}
+.clgname h1 {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+}
+.marksheet h2{
+    text-align: center;
+    font-size: 25px;
+    color: rgb(255, 0, 0);
+    margin: 40px auto 30px;
+}
+.table table {
+    border: 2px solid brown;
+    border-collapse: collapse;
+    padding: 5px;
+    margin: 10px auto 0;
+}
+.table table tr td{
+    border: 2px solid brown;
+    width: 200px;
+    text-align: center;
+    padding: 5px 16px;
+}
+.table table tr td:nth-last-child(1){
+    width: 400px;
+}
+.table table tr td span{
+    color: brown;
+    font-weight: bold;
+}
+.inputmark table{
+    margin: 10px auto;
+    border: 2px solid brown;
+    border-collapse: collapse;
+    text-align: center;
+    width: 900px;
+
+}
+.inputmark table tr td {
+    padding: 10px;
+    font-weight: bold;
+}
+.inputmark table tr td input{
+    width: 50px;
+    border: none ;
+    background-color: rgb(252, 250, 233);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.inputmark table th{
+    color: brown;
+    border-bottom: 2px solid brown;
+    border-collapse: collapse;
+    padding: 5px 0px;
+}
+.inputmark table tr td:nth-child(2){
+    border-right: 2px solid brown;
+    border-collapse: collapse;
+    width: 250px;
+    text-align: left;
+}
+ .inputmark table tr td:nth-child(3), .inputmark table tr th:nth-child(3){
+    border-right: 2px solid brown;
+    border-left: 2px solid brown;
+    border-collapse: collapse;
+    width: 50px;
+}
+.inputmark table tr td:nth-last-child(1),.inputmark table tr th:nth-last-child(1){
+    width: 100px;
+    border-left:2px solid brown;
+    padding: 5px;
+}
+.inputmark table tr th:nth-last-child(2){
+    /* width: 100px; */
+    border-left:2px solid brown;
+    /* padding: 5px; */
+}
+.inputmark table tr.grandtot {
+    border-top: 2px solid brown;
+}
+.inputmark table tr.grandtot td,
+.inputmark table tr.grandtot th,
+.inputmark table tr.inwords td,
+.inputmark table tr.inwords th {
+    color: brown;
+    text-align: left;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 0;
+    padding: 20px 0 0;
+    font-weight: bold;
+}
+.footer p{
+ text-align:center;
+}
+.footer p span {
+    color: brown;
+    padding: 0 10px;
+    text-align: right;
+}
+.footer .date h6 {
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+.numinwords.black, .alltot.black{
+    color: black;
+}
+.deputy-controller {
+    text-align: right;
+}
+.month-year {
+    border-right: 2px solid brown;
+    text-align: center!important;
+}
+.heading p span{
+    color: brown;
+}
+.note p span{
+    text-align: center;
+    margin-left: 50px;
+}
