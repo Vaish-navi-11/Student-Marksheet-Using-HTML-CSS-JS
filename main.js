@@ -14,12 +14,16 @@ function numberToWords(number) {
 function calculateTotalMarks() {
     const theoryInputs = document.querySelectorAll('[id^="theory-marks-"]');
     const practicalInputs = document.querySelectorAll('[id^="practical-marks-"]');
+    // if (theoryInputs.length==){
+    //     alert("Theory marks should not exceed 50!");
+    //     return;
+    // }
 
     let grandTotal = 0;
 
     theoryInputs.forEach((theoryInput, index) => {
-        const theoryMarks = parseInt(theoryInput.value) || 0;
-        const practicalMarks = parseInt(practicalInputs[index].value) || 0;
+        let theoryMarks = parseInt(theoryInput.value) || 0;
+        let practicalMarks = parseInt(practicalInputs[index].value) || 0;
         const totalMarks = theoryMarks + practicalMarks;
 
         const totalCell = document.getElementById(`total-marks-${index + 1}`);
@@ -34,21 +38,16 @@ function calculateTotalMarks() {
     const grandTotalCell = document.querySelector('.grandtot .alltot');
     grandTotalCell.textContent = grandTotal;
 
-    const maxTotalMarks = theoryInputs.length * 100; 
-
-    const percentageCell = document.querySelector('.percentage.alltot'); // Assuming the percentage cell has class "percentage" and "alltot"
+    const percentageCell = document.querySelector('.percentage-tot');
 
     if (percentageCell) {
-        const percentage = (grandTotal / maxTotalMarks) * 100;
+        const percentage = (grandTotal / 800) * 100;
         percentageCell.textContent = percentage.toFixed(2) + '%';
     }
 
-    // Display placeholder until actual value is entered
     const totalWordsCells = document.querySelectorAll('.numinwords');
 
     totalWordsCells.forEach(function(cell) {
-        const placeholder = cell.getAttribute('data-placeholder');
-
         if (cell.textContent.trim() === '') {
             cell.textContent = 'Zero Zero';
         }
@@ -60,3 +59,29 @@ document.addEventListener('input', (event) => {
         calculateTotalMarks();
     }
 });
+    var grade=document.getElementById("grade");
+    if(percentageCell>=90)
+    {
+        grade.value="O";
+    }
+    else if(percentage>=80)
+    {
+        grade.value="A++";
+    } 
+    else if(percentage>=70)
+    {
+        grade.value="A";
+    } 
+    else if(percentage>=60)
+    {
+        grade.value="B++";
+    } 
+    else if(percentage>=50)
+    {
+        grade.value="B";
+    } 
+    else
+    {
+        grade.value="AR";
+    }
+    
