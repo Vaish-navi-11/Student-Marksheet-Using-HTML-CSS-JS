@@ -10,20 +10,28 @@ function numberToWords(number) {
     return wordsArray.join(' ');
 }
 
-
 function calculateTotalMarks() {
     const theoryInputs = document.querySelectorAll('[id^="theory-marks-"]');
     const practicalInputs = document.querySelectorAll('[id^="practical-marks-"]');
-    // if (theoryInputs.length==){
-    //     alert("Theory marks should not exceed 50!");
-    //     return;
-    // }
 
     let grandTotal = 0;
 
     theoryInputs.forEach((theoryInput, index) => {
         let theoryMarks = parseInt(theoryInput.value) || 0;
         let practicalMarks = parseInt(practicalInputs[index].value) || 0;
+
+        // Input validation for theory and practical marks
+        if (theoryMarks > 75) {
+            alert("Theory marks should not exceed 75");
+            theoryInput.value = '';
+            theoryMarks = '0';
+        }
+        if (practicalMarks > 25) {
+            alert("Practical marks should not exceed 25");
+            practicalInputs[index].value = '';
+            practicalMarks = '0';
+        }
+
         const totalMarks = theoryMarks + practicalMarks;
 
         const totalCell = document.getElementById(`total-marks-${index + 1}`);
@@ -43,6 +51,29 @@ function calculateTotalMarks() {
     if (percentageCell) {
         const percentage = (grandTotal / 800) * 100;
         percentageCell.textContent = percentage.toFixed(2) + '%';
+
+        // Grade calculation
+        
+        var grade = document.getElementById("grade");
+        grade.textContent = "Grade";
+        if (percentage >= 90) {
+            grade.textContent = "O";
+        }
+        else if (percentage >= 80) {
+            grade.textContent = "A+";
+        }
+        else if (percentage >= 70) {
+            grade.textContent = "A";
+        }
+        else if (percentage >= 60) {
+            grade.textContent = "B+";
+        }
+        else if (percentage >= 50) {
+            grade.textContent = "B";
+        }
+        else {
+            grade.textContent = "RA";
+        }
     }
 
     const totalWordsCells = document.querySelectorAll('.numinwords');
@@ -59,29 +90,11 @@ document.addEventListener('input', (event) => {
         calculateTotalMarks();
     }
 });
-    var grade=document.getElementById("grade");
-    if(percentageCell>=90)
-    {
-        grade.value="O";
-    }
-    else if(percentage>=80)
-    {
-        grade.value="A++";
-    } 
-    else if(percentage>=70)
-    {
-        grade.value="A";
-    } 
-    else if(percentage>=60)
-    {
-        grade.value="B++";
-    } 
-    else if(percentage>=50)
-    {
-        grade.value="B";
-    } 
-    else
-    {
-        grade.value="AR";
-    }
-    
+// var date = document.querySelector(".date p");
+// var now = new Date();
+
+// const day = String(now.getDate()).padStart(2, '0');
+// const month = String(now.getMonth() + 1).padStart(2, '0');
+// const year = now.getFullYear();
+
+// date.innerHTML = `${day}/${month}/${year}`;
